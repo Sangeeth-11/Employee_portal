@@ -1,0 +1,31 @@
+<div class="w-100 d-flex justify-content-center align-items-center " style="height: 93vh;background-color: rgba(226, 217, 217, 0.895);">
+    <div class="w-50 bg-dark border shadow rounded p-5 row">
+        <div class="col">
+            <h3 class="text-light mb-3 px-5"> Admin Login</h3>
+            <form #logForm="ngForm" (ngSubmit)="handleLogin()">
+                <div class="form-floating mb-4">
+                    <input type="email" class="form-control" #useremail="ngModel"  [(ngModel)]="email" name="email" required id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="text-danger" *ngIf="useremail.invalid && useremail.touched">
+                   Invalid email
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="password" class="form-control" #userpass="ngModel" pattern="[a-zA-Z0-9@_]*" required [(ngModel)]="password" name="pass" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="text-danger" *ngIf="userpass.invalid && userpass.touched">
+                   invalid password
+                </div>
+                <div class="text-center">
+                    <button type="submit" [disabled]="logForm.invalid" class="btn btn-light">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/022/675/079/small_2x/data-protection-anti-virus-it-security-using-cyber-security-services-to-protect-private-personal-data-credit-card-pin-user-login-account-password-concept-illustration-free-vector.jpg"
+                alt="" width="100%">
+        </div>
+
+    </div>
+</div>

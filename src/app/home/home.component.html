@@ -1,0 +1,32 @@
+<div class="w-100 row" style="height: 93vh">
+    <div class="col-2 bg-dark">
+        <h5 class="text-center mt-4"><a routerLink="/home" class="text-decoration-none text-light">Home</a></h5>
+        <h5 class="text-center mt-4"><a routerLink="/employee" class="text-decoration-none text-light">Employee</a></h5>
+    </div>
+    <div class="col-10">
+        <div class="row">
+            <div class="col-8">
+                <div class="d-flex justify-content-center align-items-center p-5"
+                    style="background-image: url('https://img.freepik.com/free-vector/stylish-glowing-digital-red-lines-banner_1017-23964.jpg');">
+                    <h3 class="text-light">Welcome Admin</h3>
+                </div>
+                <div class="row">
+                    <div class="col-4 p-5">
+                        <app-calender></app-calender>
+                    </div> 
+                    <div class="col-8">
+                        <app-chart></app-chart>
+                    </div> 
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="shadow border" style="height: 450px;">
+                    <app-profile></app-profile>
+                </div>
+                <div class="container-fluid shadow p-5" style="background-image: url('https://img.freepik.com/free-vector/stylish-glowing-digital-red-lines-banner_1017-23964.jpg');">
+                    <h4 class="text-light">Employee Count :{{empCount}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
