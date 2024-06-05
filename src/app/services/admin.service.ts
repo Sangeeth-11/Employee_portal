@@ -6,7 +6,8 @@ import {HttpClient} from '@angular/common/http'
 })
 export class AdminService {
 
-  server_url:string ="http://localhost:3000"
+  // server_url:string ="http://localhost:3000"
+  server_url:string ="https://employee-server-g155.onrender.com"
   constructor(private http:HttpClient) { }
 
   getAdmin(){
