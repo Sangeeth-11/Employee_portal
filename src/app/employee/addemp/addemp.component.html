@@ -42,7 +42,7 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-success" [disabled]="empform.invalid">save</button>
-                        <button type="button" class="btn btn-danger">cancel</button>
+                        <button type="button" class="btn btn-danger" (click)="onCancel()">cancel</button>
                     </div>
                 </form>
             </div>

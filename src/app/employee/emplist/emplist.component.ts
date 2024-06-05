@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-emplist',
@@ -8,8 +10,9 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./emplist.component.css']
 })
 export class EmplistComponent  implements OnInit{
+  searchKey:string=''
   employees:any=[]
-  constructor(private api:ApiService){
+  constructor(private api:ApiService,private toastr:ToastrService){
     console.log(this.employees);
     
   }
@@ -31,6 +34,17 @@ export class EmplistComponent  implements OnInit{
     this.employees = emp
     console.log(this.employees);
     
+  }
+  deleteEmployee(id:any){
+    this.api.deleteEmployee(id).subscribe({
+      next:(res:any)=>{
+        this.toastr.success("deleted successfully")
+        this.ngOnInit()
+      },
+      error:(err:any)=>{
+        this.toastr.error(err)
+      }
+    })
   }
 
  

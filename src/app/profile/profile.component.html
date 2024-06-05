@@ -1,1 +1,21 @@
-<p>profile works!</p>
+<div class="d-flex flex-column align-items-center justify-content-center" style="height: 100%;">
+    <img [src]="profilePicture" alt="" class="w-50" *ngIf="!editProfile">
+    <button class="btn btn-link" (click)="onEdit()" *ngIf="!editProfile">Edit Admin Profile</button>
+    <div *ngIf="editProfile">
+        <form>
+            <div>
+
+                <label class="mx-auto" for="ff">
+                    <input type="file" name="" style="visibility: hidden;" id="ff"  (change)="getFile($event)">
+                    <img [src]="profilePicture"  alt="" class="ms-5" style="height: 200px;width: 150px;">
+                </label>
+            </div>
+        <input type="text"  [(ngModel)]="adminProfile.email" name="email" id="" placeholder="enter Admin's email" class="form-control my-4">
+        <input type="text" [(ngModel)]="adminProfile.password" name="psd" id="" placeholder="Enter Password"  class="form-control my-4">
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-success" type="submit" (click)="onUpdate()">update</button>
+            <button class="btn btn-danger" type="button" (click)="onEdit()">cancel</button>
+        </div>
+    </form>
+    </div>
+</div>

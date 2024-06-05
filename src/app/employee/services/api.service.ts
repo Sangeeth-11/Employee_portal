@@ -17,4 +17,10 @@ export class ApiService {
    getEmployee(id:any){
     return this.http.get(`${this.server_url}/employees/${id}`)
    }
+   editEmployee(id:any,data:any){
+    return this.http.put(`${this.server_url}/employees/${id}`,data)
+   }
+   deleteEmployee(id:any){
+    return this.http.delete(`${this.server_url}/employees/${id}`)
+   }
 }

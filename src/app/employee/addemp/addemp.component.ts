@@ -33,5 +33,9 @@ export class AddempComponent {
       })
     }
   }
+  onCancel(){
+    this.emp={}
+    this.router.navigateByUrl('employee')
+  }
 
 }

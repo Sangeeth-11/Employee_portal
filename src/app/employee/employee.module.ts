@@ -8,6 +8,7 @@ import { AddempComponent } from './addemp/addemp.component';
 import { EditempComponent } from './editemp/editemp.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     EmployeeComponent,
     EmplistComponent,
     AddempComponent,
-    EditempComponent
+    EditempComponent,
+    SearchPipe
    
   ],
   imports: [

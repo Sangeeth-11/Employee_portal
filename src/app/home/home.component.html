@@ -1,7 +1,12 @@
 <div class="w-100 row" style="height: 93vh">
     <div class="col-2 bg-dark">
-        <h5 class="text-center mt-4"><a routerLink="/home" class="text-decoration-none text-light">Home</a></h5>
-        <h5 class="text-center mt-4"><a routerLink="/employee" class="text-decoration-none text-light">Employee</a></h5>
+        <div>
+            <h5 class="text-center mt-4"><a routerLink="/home" class="text-decoration-none text-light">Home</a></h5>
+            <h5 class="text-center mt-4"><a routerLink="/employee" class="text-decoration-none text-light">Employee</a></h5>
+        </div>
+        <div class="px-5 ms-4">
+            <button class="btn btn-light" (click)="logout()">Logout</button>
+        </div>
     </div>
     <div class="col-10">
         <div class="row">
