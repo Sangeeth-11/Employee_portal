@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 
 @Component({
@@ -46,6 +48,27 @@ export class EmplistComponent  implements OnInit{
       }
     })
   }
-
+  sortId(){
+    this.employees.sort((a:any,b:any)=>a.id-b.id)
+  }
+  sortUsername(){
+    this.employees.sort((a:any,b:any)=>a.username.localeCompare( b.username))
+  }
+  generatePdf(){
+    const doc =new jsPDF()
+    const body:any=this.employees.map((item:any)=>{
+      const res:any=[]
+      res.push(item.id)
+      res.push(item.username)
+      res.push(item.email)
+      res.push(item.status)
+      return res
+    })
+    autoTable(doc,{
+      head:[['ID','Username','email','Status']],
+      body
+    })
+    doc.save('table.pdf')
+  }
  
 }
